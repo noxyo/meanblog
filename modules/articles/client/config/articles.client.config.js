@@ -3,6 +3,7 @@
 // Configuring the Articles module
 angular.module('articles').run(['Menus',
   function (Menus) {
+    /*
     // Add the articles dropdown item
     Menus.addMenuItem('topbar', {
       title: 'Articles',
@@ -20,6 +21,6 @@ angular.module('articles').run(['Menus',
     Menus.addSubMenuItem('topbar', 'articles', {
       title: 'Create Articles',
       state: 'articles.create'
-    });
+    }); */
   }
 ]);

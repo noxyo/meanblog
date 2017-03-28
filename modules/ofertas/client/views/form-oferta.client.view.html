@@ -1,0 +1,52 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.oferta._id ? 'Edit Oferta' : 'New Oferta'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.ofertaForm" class="form-horizontal" ng-submit="vm.save(vm.form.ofertaForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="title">Titulo:</label>
+          <input name="title" type="text" ng-model="vm.oferta.title" id="title" class="form-control" placeholder="Titulo" required>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="descricao">Descrição:</label>
+          <textarea name="descricao" type="text" ng-model="vm.oferta.descricao" id="descricao" class="form-control" placeholder="Descrição" required></textarea>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="valor">Valor de Mercado:</label>
+          <input name="valor" type="text" ng-model="vm.oferta.valor" id="valor" class="form-control" placeholder="Valor" required>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="preco">Preço:</label>
+          <input name="preco" type="text" ng-model="vm.oferta.preco" id="preco" class="form-control" placeholder="Preço" required>
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="categoria">Categoria:</label>
+          <select name="categoria" ng-model="vm.oferta.categoria" id="categoria" class="form-control" required>
+            <option value=""> --- Escolha a Categoria --- </option>
+            <option value="Fusão">Fusão</option>
+            <option value="Consórcio">Consórcio</option>
+            <option value="Financiamento">Financiamento</option>
+            <option value="Aumento de Capital">Aumento de Capital</option>
+            <option value="Quotas">Quotas</option>
+            <option value="Acções (não cotadas)">Acções (não cotadas)</option>
+            <option value="Trespasse">Trespasse</option>
+            <option value="Cessão de Exploração">Cessão de Exploração</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.oferta._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

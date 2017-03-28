@@ -1,0 +1,33 @@
+<section>
+  <div class="page-header">
+    <h1>
+      <span ng-bind="vm.oferta.title"></span>
+      <small>{{vm.oferta.categoria}}</small>
+
+    </h1>
+    <div ng-bind="vm.oferta.descricao"></div>
+    <span>Valor:</span> {{vm.oferta.valor}} <br>
+    <span>Preço:</span> {{vm.oferta.preco}} <br>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.oferta.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="ofertas.edit({ ofertaId: vm.oferta._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.oferta.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.oferta.user"
+            ng-bind="vm.oferta.user.displayName"></span>
+      <span ng-if="!vm.oferta.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.oferta.content"></p>
+</section>
